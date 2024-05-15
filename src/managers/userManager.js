@@ -5,7 +5,7 @@ exports.register = async (userData) => {
     if(user){
         throw new error('Username already exists');
     }
-    return User.creaete(userData);
+    return User.create(userData);
     };
 
 // exports.login = async (username,password) => { const user = await User.findOne({username})};
