@@ -36,11 +36,3 @@ const User = mongoose.model('User', userSchema);
 module.exports = User;
 
 
-// if(!user) {
-//     throw new Error('Invaid username or password!')
-// }
-// const isValid = await bcrypt.compare(this.password, user.password);
-// if(!isValid){
-//     throw new Error('Invalid username or password!');
-// }
-// })
