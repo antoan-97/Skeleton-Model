@@ -1,4 +1,5 @@
 const jwt = require('../lib/jwt');
+const { SECRET } = require('../config/config');
 
 
 exports.auth = async (req,res,next) => {
