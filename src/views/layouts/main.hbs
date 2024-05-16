@@ -43,21 +43,10 @@
                             </a>
                         </li>
 
-                        <!--For Guest User-->
-                        <li class="nav-item">
-                            <!-- Link to Login Page -->
-                            <a href="/users/login">
-                                <i>Login</i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Link to Register Page -->
-                            <a href="/users/register">
-                                <i>Register</i>
-                            </a>
-                        </li>
 
                         <!--For login users-->
+                        {{#if itsAuthenticated}}
+
                         <li class="nav-item">
                             <!-- Link to Add Photo Page -->
                             <a href="#">
@@ -78,15 +67,34 @@
                                 <i>Logout</i>
                             </a>
                         </li>
+
+                        {{else}}
+
+                        <li class="nav-item">
+                            <!-- Link to Login Page -->
+                            <a href="/users/login">
+                                <i>Login</i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- Link to Register Page -->
+                            <a href="/users/register">
+                                <i>Register</i>
+                            </a>
+                        </li>
+                        {{/if}}
+
+
+
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-{{{body}}}
+    {{{body}}}
 
-      <!-- Starts Footer Section -->
+    <!-- Starts Footer Section -->
     <div class="footer">
         <span class="footer-section">
             © 2023 SoftUni Back-End Exam
