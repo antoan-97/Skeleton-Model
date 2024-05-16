@@ -4,6 +4,8 @@ const handlebars = require('express-handlebars');
 const path = require('path');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
+
+const { errorHandler } = require('./middlewares/errorHandlerMiddleware');
 const { auth } = require('./middlewares/authMiddleware');
 
 const app = express();
@@ -24,6 +26,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(auth);
 app.use(routes);
+app.use(errorHandler);
 
 
 app.listen(5000, console.log('Server is listeningon port 5000'));
