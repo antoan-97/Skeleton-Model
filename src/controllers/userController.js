@@ -8,9 +8,13 @@ router.get('/login', (req, res) => {
 router.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
+    try {
         const token = await userManager.login(username, password);
         res.cookie('token', token);
         res.redirect('/');
+    } catch (err) {
+        res.render('users/login', { error:  getErrorMessage(err) });
+    }
    
 });
 
