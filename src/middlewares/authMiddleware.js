@@ -35,3 +35,12 @@ exports.isLoggedIn = (req, res, next) => {
     }
     next();
 };
+
+exports.isOwner = async (req, res, next) => {
+    const recipeId = req.params.recipeId;
+    const recipe = await recipeManager.getOne(recipeId);
+    if (!recipe || recipe.owner.toString() !== req.user._id.toString()) {
+        return res.render('404');
+    }
+    next();
+};
